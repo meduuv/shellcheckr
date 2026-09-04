@@ -1,16 +1,17 @@
 # ShellCheckr
 
-A local shell-script quality checker focused on safe, readable, portable scripting practices.
+> Review shell scripts for common safety, portability, and readability issues.
 
-## Features
+ShellCheckr is a local shell-script quality checker that produces line-numbered diagnostics without executing the script being inspected.
+
+## Highlights
 
 - Basic shell syntax checks through local tooling when available
 - Common quoting and portability warnings
-- Dangerous command-pattern warnings without executing the script
+- Dangerous command-pattern warnings
 - Line-numbered diagnostics
-- JSON output for editor integrations
-
-ShellCheckr only reads source files. It does not execute scripts.
+- JSON output for editor and automation integrations
+- Read-only source analysis
 
 ## Usage
 
@@ -18,6 +19,28 @@ ShellCheckr only reads source files. It does not execute scripts.
 shellcheckr script.sh
 shellcheckr script.sh --json
 ```
+
+## Analysis flow
+
+```text
+shell script
+     ↓
+static checks
+     ↓
+line-level findings
+     ↓
+review + fix
+```
+
+## Use Cases
+
+- Shell-script review
+- Development workflows
+- CI quality checks
+- Portability checks
+- Security-conscious scripting
+
+ShellCheckr does not execute the inspected script.
 
 ## Development
 
@@ -29,6 +52,6 @@ python -m unittest discover -s tests -v
 
 MIT
 
-## Credits
+Built by **Meduuv**.
 
-Built by Medu: https://guns.lol/meduu
+[More projects](https://github.com/meduuv?tab=repositories) · [guns.lol/meduu](https://guns.lol/meduu)
